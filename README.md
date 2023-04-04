@@ -20,6 +20,7 @@
 ```
 <p><br></p>
 
+### **Comment j'ai push sur Git:**
 <p>1-Créer un nouveau repo public sur mon git<br>
 2-Ensuite j'ai exécuté les commandes suivantes sur mon CMD:</p>
 
