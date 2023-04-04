@@ -35,13 +35,8 @@
 2-Saisissez les commandes suivantes:</p>
 
 ```bash
-    kubectl create deployment exo3-deployment --image nancylence/exo3-kub
-    kubectl get deployment #pour vérifier la création de votre déploiement.
-    kubectl expose deployment exo3-deployment --port 80 --type LoadBalancer
-    kubectl get svc   #pour vérifier la création de votre service
-    minikube service exo3-deployment  #vérifier le déploiement sur votre localhost
-    kubectl scale deployment/exo3-deployment --replicas 5
-    kubectl get pods   
+    kubectl get all 
+    kubectl apply -f .\resource-files\service.yml,.\resource-files\deployment.yml
 ```
 
 ### **NB:**
