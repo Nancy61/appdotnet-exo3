@@ -37,6 +37,9 @@
 ```bash
     kubectl get all 
     kubectl apply -f .\resource-files\service.yml,.\resource-files\deployment.yml
+    kubectl get svc
+    minikube service mon-site-exo3-service
+    kubectl get pods
 ```
 
 ### **NB:**
