@@ -1,0 +1,52 @@
+# **DESCRIPTION DU PROJET**
+## **Pour commencer:**
+### <p>Ce projet est un exemple de déploiement d'une application dotnet via kubernetes.<br></p>
+
+<p><br></p>
+
+### **Pré-requis:**
+<p>-docker desktop<br>
+-kubernetes<br>
+-dockerhub image: nancylence/exo3-kub:latest<br></p>
+
+<p><br></p>
+
+### **Comment j'ai envoyé l'image sur dockerhub:**
+```bash
+    docker build -t exo3-kub . 
+    docker run --name dotnet-app -d -p 80:80 exo3-kub
+    docker tag exo3-kub nancylence/exo3-kub
+    docker push nancylence/exo3-kub
+```
+<p><br></p>
+
+<p>1-Créer un nouveau repo public sur mon git<br>
+2-Ensuite j'ai exécuté les commandes suivantes sur mon CMD:</p>
+
+```bash
+    git clone https://github.com/Nancy61/appdotnet-exo3.git
+#j'ai manuellement rajouter les fichiers de mon app dans le dossier de mon repo créer automatiquement après le clone
+    git commit -m "description"
+    git push
+```
+
+### **Comment déployer l'application:**
+<p>1-Connectez-vous sur votre terminal en tant qu'administrateur.<br>
+2-Saisissez les commandes suivantes:</p>
+
+```bash
+    kubectl create deployment exo3-deployment --image nancylence/exo3-kub
+    kubectl get deployment #pour vérifier la création de votre déploiement.
+    kubectl expose deployment exo3-deployment --port 80 --type LoadBalancer
+    kubectl get svc   #pour vérifier la création de votre service
+    minikube service exo3-deployment  #vérifier le déploiement sur votre localhost
+    kubectl scale deployment/exo3-deployment --replicas 5
+    kubectl get pods   
+```
+
+### **NB:**
+Si vous avez déjà déployé un site qui écoute sur le port 8080, pensez à le supprimer avant de déployer cette application avec la commande:
+
+```bash
+    - kubectl delete svc example-deployment
+```
