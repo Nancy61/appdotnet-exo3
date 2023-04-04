@@ -14,7 +14,6 @@
 ### **Comment j'ai envoyé l'image sur dockerhub:**
 ```bash
     docker build -t exo3-kub . 
-    docker run --name dotnet-app -d -p 80:80 exo3-kub
     docker tag exo3-kub nancylence/exo3-kub
     docker push nancylence/exo3-kub
 ```
@@ -27,6 +26,7 @@
 ```bash
     git clone https://github.com/Nancy61/appdotnet-exo3.git
 #j'ai manuellement rajouter les fichiers de mon app dans le dossier de mon repo créer automatiquement après le clone
+    git add .
     git commit -m "description"
     git push
 ```
